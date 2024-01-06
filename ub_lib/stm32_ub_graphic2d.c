@@ -1,20 +1,4 @@
 //--------------------------------------------------------------
-// File     : stm32_ub_graphic2d.c
-// Datum    : 10.11.2013
-// Version  : 1.0
-// Autor    : UB
-// EMail    : mc-4u(@)t-online.de
-// Web      : www.mikrocontroller-4u.de
-// CPU      : STM32F429
-// IDE      : CooCox CoIDE 1.7.4
-// GCC      : 4.7 2012q4
-// Module   : STM32_UB_LCD_ILI9341, DMA2D
-// Funktion : Grafik-LCD Funktionen (per DMA2D)
-//            (Punkte, Linien, Rahmen, Flaechen)
-//--------------------------------------------------------------
-
-
-//--------------------------------------------------------------
 // Includes
 //--------------------------------------------------------------
 #include "stm32_ub_graphic2d.h"
@@ -29,7 +13,7 @@ int16_t P_Graphic2D_sgn(int16_t x);
 
 
 //--------------------------------------------------------------
-// löscht den Bildschirm mit einer Farbe (per DMA2D)
+// lï¿½scht den Bildschirm mit einer Farbe (per DMA2D)
 //--------------------------------------------------------------
 void UB_Graphic2D_ClearSreenDMA(uint16_t c)
 {
@@ -107,7 +91,7 @@ void UB_Graphic2D_DrawLineNormal(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t
   if(dx<0) dx = -dx;
   if(dy<0) dy = -dy;
 
-  // feststellen, welche Entfernung größer ist
+  // feststellen, welche Entfernung grï¿½ï¿½er ist
   if (dx>dy) {
     // x ist schnelle Richtung
     pdx=incx; pdy=0;    // pd. ist Parallelschritt

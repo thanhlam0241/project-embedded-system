@@ -1,19 +1,4 @@
 //--------------------------------------------------------------
-// File     : gui.c
-// Datum    : 22.11.2013
-// Version  : 1.0
-// Autor    : UB
-// EMail    : mc-4u(@)t-online.de
-// Web      : www.mikrocontroller-4u.de
-// CPU      : STM32F429
-// IDE      : CooCox CoIDE 1.7.4
-// GCC      : 4.7 2012q4
-// Module   : keine
-// Funktion : GUI Functions
-//--------------------------------------------------------------
-
-
-//--------------------------------------------------------------
 // Includes
 //--------------------------------------------------------------
 #include "gui.h"
@@ -684,9 +669,6 @@ uint32_t gui_check_button(void)
   if(UB_Button_Read(BTN_LEFT)==BTN_RELEASED) {
     ret_wert=GUI_JOY_LEFT;
   }
-  if(UB_Button_Read(BTN_USER)==BTN_RELEASED) {
-      ret_wert=GUI_JOY_LEFT;
-    }
 
   if(old_button!=ret_wert) {
     old_button=ret_wert;
@@ -696,6 +678,7 @@ uint32_t gui_check_button(void)
   return(ret_wert);
 }
 
+// Check keyboard
 uint32_t gui_check_keyboard(void){
 	uint32_t ret_wert=GUI_JOY_NONE;
 	  static uint32_t old_button=999;

@@ -1,24 +1,4 @@
 //--------------------------------------------------------------
-// File     : stm32_ub_i2c3.c
-// Datum    : 03.11.2013
-// Version  : 1.0
-// Autor    : UB
-// EMail    : mc-4u(@)t-online.de
-// Web      : www.mikrocontroller-4u.de
-// CPU      : STM32F429
-// IDE      : CooCox CoIDE 1.7.4
-// GCC      : 4.7 2012q4
-// Module   : GPIO, I2C 
-// Funktion : I2C-LoLevel-Funktionen (I2C-3)
-//
-// Hinweis  : mögliche Pinbelegungen
-//            I2C3 : SCL :[PA8] 
-//                   SDA :[PC9]
-//            externe PullUp-Widerstände an SCL+SDA notwendig
-//--------------------------------------------------------------
-
-
-//--------------------------------------------------------------
 // Includes
 //--------------------------------------------------------------
 #include "stm32_ub_i2c3.h"
@@ -126,7 +106,7 @@ int16_t UB_I2C3_ReadByte(uint8_t slave_adr, uint8_t adr)
     if(timeout!=0) timeout--; else return(P_I2C3_timeout(-2));
   }  
 
-  // ADDR-Flag löschen
+  // ADDR-Flag lï¿½schen
   I2C3->SR2;
 
   timeout=I2C3_TIMEOUT;
@@ -158,7 +138,7 @@ int16_t UB_I2C3_ReadByte(uint8_t slave_adr, uint8_t adr)
     if(timeout!=0) timeout--; else return(P_I2C3_timeout(-6));
   }
 
-  // ADDR-Flag löschen
+  // ADDR-Flag lï¿½schen
   I2C3->SR2;
 
   timeout=I2C3_TIMEOUT;
@@ -211,7 +191,7 @@ int16_t UB_I2C3_WriteByte(uint8_t slave_adr, uint8_t adr, uint8_t wert)
     if(timeout!=0) timeout--; else return(P_I2C3_timeout(-2));
   }  
 
-  // ADDR-Flag löschen
+  // ADDR-Flag lï¿½schen
   I2C3->SR2;
 
   timeout=I2C3_TIMEOUT;

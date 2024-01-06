@@ -1,19 +1,4 @@
 //--------------------------------------------------------------
-// File     : stm32_ub_button.c
-// Datum    : 24.10.2013
-// Version  : 1.0
-// Autor    : UB
-// EMail    : mc-4u(@)t-online.de
-// Web      : www.mikrocontroller-4u.de
-// CPU      : STM32F429
-// IDE      : CooCox CoIDE 1.7.4
-// GCC      : 4.7 2012q4
-// Module   : GPIO, (TIM, MISC)
-// Funktion : Button Funktionen
-//--------------------------------------------------------------
-
-
-//--------------------------------------------------------------
 // Includes
 //--------------------------------------------------------------
 #include "stm32_ub_button.h"
@@ -21,7 +6,7 @@
 
 
 //--------------------------------------------------------------
-// interne Funktionen
+// Hàm
 //--------------------------------------------------------------
 #if BUTTON_USE_TIMER==1
   void P_Button_InitTIM(void);
@@ -32,9 +17,7 @@
 
 
 //--------------------------------------------------------------
-// Definition aller Buttons
-// Reihenfolge wie bei BUTTON_NAME_t
-//
+// Định nghĩa các Button
 // Widerstand : [GPIO_PuPd_NOPULL,GPIO_PuPd_UP,GPIO_PuPd_DOWN]
 //--------------------------------------------------------------
 BUTTON_t BUTTON[] = {
@@ -43,7 +26,6 @@ BUTTON_t BUTTON[] = {
   {BTN_RIGHT ,GPIOC,GPIO_Pin_13 ,RCC_AHB1Periph_GPIOC,GPIO_PuPd_UP, Bit_RESET},  // PC13=Button-RIGHT
   {BTN_DOWN  ,GPIOC,GPIO_Pin_14 ,RCC_AHB1Periph_GPIOC,GPIO_PuPd_UP, Bit_RESET},  // PC14=Button-DOWN
   {BTN_LEFT  ,GPIOC,GPIO_Pin_15 ,RCC_AHB1Periph_GPIOC,GPIO_PuPd_UP, Bit_RESET},  // PC15=Button-LEFT
-  {BTN_USER	, GPIOC,GPIO_Pin_0, RCC_AHB1Periph_GPIOC,GPIO_PuPd_UP, Bit_RESET}
 };
 
 
@@ -76,10 +58,9 @@ void UB_Button_Init(void)
 
 
 //--------------------------------------------------------------
-// Status von einem Button auslesen (nicht entprellt)
-// Return Wert :
-//  -> wenn Button losgelassen = BTN_RELEASED
-//  -> wenn Button gedrueckt   = BTN_PRESSED
+// Đọc trạng thái từ nút
+//  -> Khi nhả nút hoặc không bấm = BTN_RELEASED
+//  -> Khi đang bấm   = BTN_PRESSED
 //--------------------------------------------------------------
 BUTTON_STATUS_t UB_Button_Read(BUTTON_NAME_t btn_name)
 {
@@ -98,7 +79,7 @@ BUTTON_STATUS_t UB_Button_Read(BUTTON_NAME_t btn_name)
 #if BUTTON_USE_TIMER==1
 //--------------------------------------------------------------
 // Button OnPressed Auswertung (entprellt)
-// ret_wert, ist solange true wie der Button bet�tigt ist
+// ret_wert, ist solange true wie der Button bet�tigt ist
 //--------------------------------------------------------------
 bool UB_Button_OnPressed(BUTTON_NAME_t btn_name)
 {
@@ -119,7 +100,7 @@ bool UB_Button_OnPressed(BUTTON_NAME_t btn_name)
 #if BUTTON_USE_TIMER==1
 //--------------------------------------------------------------
 // Button OnClick Auswertung (entprellt)
-// ret_wert, ist nur einmal true wenn der Button bet�tigt wurde
+// ret_wert, ist nur einmal true wenn der Button bet�tigt wurde
 //--------------------------------------------------------------
 bool UB_Button_OnClick(BUTTON_NAME_t btn_name)
 {

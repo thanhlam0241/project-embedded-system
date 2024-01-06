@@ -1,39 +1,4 @@
 //--------------------------------------------------------------
-// File     : stm32_ub_usb_hid_host.c
-// Datum    : 13.09.2014
-// Version  : 1.1
-// Autor    : UB
-// EMail    : mc-4u(@)t-online.de
-// Web      : www.mikrocontroller-4u.de
-// CPU      : STM32F429
-// IDE      : CooCox CoIDE 1.7.4
-// GCC      : 4.7 2012q4
-// Module   : GPIO, MISC
-// Funktion : USB-HID-HOST per USB-OTG-Port am Discovery
-//
-//            zum Betreiben einer USB-Mouse oder einer
-//            USB-Tastatur an der CPU
-//
-//            Beim Discovery-Modul funktioniert nur der
-//            USB-FullSpeed-Mode (USB-High-Speed geht nicht)
-//
-// Known BUG  : Timeout after connecting USB-Device -> USB_HID_DEV_NOT_SUPPORTED
-// Workaround : Hardware reset
-//--------------------------------------------------------------
-//              PB13  -> USB_OTG_VBUS
-//              PB12  -> USB_OTG_ID
-//              PB14  -> USB_OTG_DM
-//              PB15  -> USB_OTG_DP
-//              PC4   -> USB_VBUS_Enable 
-//--------------------------------------------------------------
-//
-// Tastaturlayout : "usbh_hid_keybd.h"
-// Maus Grenzen   : "usbh_usr.h"
-//
-//--------------------------------------------------------------
-
-
-//--------------------------------------------------------------
 // Includes
 //--------------------------------------------------------------
 #include "stm32_ub_usb_hid_host.h"
@@ -43,7 +8,7 @@
 
 
 //--------------------------------------------------------------
-// Globale Variabeln
+// Biáº¿n Global
 //--------------------------------------------------------------
 USB_OTG_CORE_HANDLE          USB_OTG_Core_dev;
 USBH_HOST                    USB_Host;
@@ -51,8 +16,8 @@ USBH_HOST                    USB_Host;
 
 
 //--------------------------------------------------------------
-// Init vom USB-OTG-Port als HID-HOST
-// (Host für HID-Devices z.B. USB-Mouse oder USB-Keyboard)
+// Init USB-OTG-Port or HID-HOST
+// (Host fï¿½r HID-Devices z.B. USB-Mouse oder USB-Keyboard)
 //--------------------------------------------------------------
 void UB_USB_HID_HOST_Init(void)
 {
@@ -77,7 +42,7 @@ void UB_USB_HID_HOST_Init(void)
 
 //--------------------------------------------------------------
 // USB_HOST-Funktion
-// diese Funktion muss zyklisch aufgerufen werden
+// Call this function in a loop
 // Return_wert :
 //  USB_HID_MOUSE_CONNECTED    , USB-Mouse angeschlossen und bereit
 //  USB_HID_KEYBOARD_CONNECTED , USB-Tastatur angeschlossen und bereit
@@ -92,9 +57,9 @@ USB_HID_HOST_STATUS_t UB_USB_HID_HOST_Do(void)
   static uint32_t timeout_cnt=0;
 
   if(USB_HID_HOST_STATUS!=USB_HID_DEV_NOT_SUPPORTED) {
-    // wenn das USB-Device nicht unterstützt wird,
+    // wenn das USB-Device nicht unterstï¿½tzt wird,
     // wird die Funktion nicht mehr aufgerufen
-    // damit die Software nicht hängenbleibt
+    // damit die Software nicht hï¿½ngenbleibt
     USBH_Process(&USB_OTG_Core_dev, &USB_Host);
   }
 

@@ -1,19 +1,4 @@
 //--------------------------------------------------------------
-// File     : stm32_ub_systick.c
-// Datum    : 12.11.2013
-// Version  : 1.0
-// Autor    : UB
-// EMail    : mc-4u(@)t-online.de
-// Web      : www.mikrocontroller-4u.de
-// CPU      : STM32F429
-// IDE      : CooCox CoIDE 1.7.4
-// GCC      : 4.7 2012q4
-// Module   : keine
-// Funktion : Pausen- Timer- und Counter-Funktionen
-//            Zeiten im [us,ms,s] Raster
-//--------------------------------------------------------------
-
-//--------------------------------------------------------------
 // Includes
 //--------------------------------------------------------------
 #include "stm32_ub_systick.h"
@@ -35,13 +20,12 @@ static volatile uint32_t Systick_Delay;  // Globaler Pausenzaehler
 
 
 //--------------------------------------------------------------
-// Init vom System-Counter
-// entweder im 1us-Takt oder 1ms-Takt
+// init counter for keyboard
 //--------------------------------------------------------------
 void UB_Systick_Init(void) {
   RCC_ClocksTypeDef RCC_Clocks;
 
-  // alle Variabeln zurücksetzen
+  // alle Variabeln zurï¿½cksetzen
   Systick_Delay=0;
   keyboard_timer=0;
   Player_Systick_Timer_ms=0;
@@ -79,8 +63,8 @@ void UB_Systick_Pause_us(volatile uint32_t pause)
 
 
 //--------------------------------------------------------------
-// Pausenfunktion (in ms)
-// die CPU wartet bis die Zeit abgelaufen ist
+// Pause (in ms)
+// CPU wait for time to expire
 //--------------------------------------------------------------
 void UB_Systick_Pause_ms(volatile uint32_t pause)
 {
@@ -120,7 +104,7 @@ void UB_Systick_Pause_s(volatile uint32_t pause)
 //--------------------------------------------------------------
 void SysTick_Handler(void)
 {
-  // Tick für Pause
+  // Tick for Pause
   if(Systick_Delay != 0x00) {
     Systick_Delay--;
   }

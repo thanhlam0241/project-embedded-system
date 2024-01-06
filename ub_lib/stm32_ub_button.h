@@ -30,8 +30,7 @@
 
 
 //--------------------------------------------------------------
-// Liste aller Buttons
-// (keine Nummer doppelt und von 0 beginnend)
+// List all Buttons
 //--------------------------------------------------------------
 typedef enum 
 {
@@ -39,25 +38,24 @@ typedef enum
 	BTN_RIGHT,     // PC13
 	BTN_DOWN,      // PC14
 	BTN_LEFT,      // PC15
-	BTN_USER       // PC0
 }BUTTON_NAME_t;
 
-#define  BUTTON_ANZ   5 // Anzahl von Button_NAME_t
+#define  BUTTON_ANZ   4 // Số nút
 
 
 //--------------------------------------------------------------
-// Status eines Buttons
+// Status Buttons
 //--------------------------------------------------------------
 typedef enum {
-  BTN_RELEASED = 0,  // Button losgelassen
-  BTN_PRESSED        // Button gedrueckt
+  BTN_RELEASED = 0,  // Đã nhả nút
+  BTN_PRESSED        // Đã nhấn nút
 }BUTTON_STATUS_t;
 
 
 
 //--------------------------------------------------------------
-// Timer f�r Button => TIM7
-// Grundfrequenz = 2*APB1 (APB1=45MHz) => TIM_CLK=90MHz
+// Timer f0r Button => TIM7
+// Tần số cơ bản = 2*APB1 (APB1=45MHz) => TIM_CLK=90MHz
 // TIM_Frq = TIM_CLK/(periode+1)/(vorteiler+1)
 // TIM_Frq = 20Hz => 50ms (nicht kleiner als 1ms einstellen)
 //--------------------------------------------------------------
@@ -73,7 +71,7 @@ typedef enum {
 
 
 //--------------------------------------------------------------
-// Struktur eines Buttons
+// Structure Button
 //--------------------------------------------------------------
 typedef struct {
   BUTTON_NAME_t BUTTON_NAME;  // Name
@@ -86,7 +84,7 @@ typedef struct {
 
 
 //--------------------------------------------------------------
-// Globale Funktionen
+// Hàm khởi tạo
 //--------------------------------------------------------------
 void UB_Button_Init(void);
 BUTTON_STATUS_t UB_Button_Read(BUTTON_NAME_t btn_name);

@@ -1,19 +1,4 @@
 //--------------------------------------------------------------
-// File     : bot.c
-// Datum    : 22.11.2013
-// Version  : 1.0
-// Autor    : UB
-// EMail    : mc-4u(@)t-online.de
-// Web      : www.mikrocontroller-4u.de
-// CPU      : STM32F429
-// IDE      : CooCox CoIDE 1.7.4
-// GCC      : 4.7 2012q4
-// Module   : keine
-// Funktion : Functions for all bots
-//--------------------------------------------------------------
-
-
-//--------------------------------------------------------------
 // Includes
 //--------------------------------------------------------------
 #include "bot.h"
@@ -34,8 +19,8 @@ uint32_t bot_calc_distance(uint32_t x1, uint32_t y1,uint32_t x2, uint32_t y2);
 
 //--------------------------------------------------------------
 // bot strategie : random
-//                 move randomly to the next room
-//                 (but dont go backwards to avoid toggling)
+// move randomly to the next room
+// (but dont go backwards to avoid toggling)
 //--------------------------------------------------------------
 uint32_t bot_calc_move_random(uint32_t xp, uint32_t yp, uint32_t akt_dir)
 {

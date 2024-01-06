@@ -1,34 +1,4 @@
 //--------------------------------------------------------------
-// File     : stm32_ub_uart.c
-// Datum    : 31.10.2013
-// Version  : 1.0
-// Autor    : UB
-// EMail    : mc-4u(@)t-online.de
-// Web      : www.mikrocontroller-4u.de
-// CPU      : STM32F429
-// IDE      : CooCox CoIDE 1.7.4
-// GCC      : 4.7 2012q4
-// Module   : GPIO, USART, MISC
-// Funktion : UART (RS232) In und OUT
-//            Receive wird per Interrupt behandelt
-//
-// Hinweis  : mögliche Pinbelegungen
-//            UART1 : TX:[PA9,PB6] RX:[PA10,PB7]
-//            UART2 : TX:[PA2,PD5] RX:[PA3,PD6]
-//            UART3 : TX:[PB10,PC10,PD8] RX:[PB11,PC11,PD9]
-//            UART4 : TX:[PA0,PC10] RX:[PA1,PC11]
-//            UART5 : TX:[PC12] RX:[PD2]
-//            UART6 : TX:[PC6,PG14] RX:[PC7,PG9]
-//            UART7 : TX:[PE8,PF7] RX:[PE7,PF6]
-//            UART8 : TX:[PE1] RX:[PE0]
-//
-// Vorsicht : Als Endekennung beim Empfangen, muss der Sender
-//            das Zeichen "0x0D" = Carriage-Return
-//            an den String anhängen !!
-//--------------------------------------------------------------
-
-
-//--------------------------------------------------------------
 // Includes
 //--------------------------------------------------------------
 #include "stm32_ub_uart.h"
@@ -37,8 +7,7 @@
 
 
 //--------------------------------------------------------------
-// Definition aller UARTs
-// Reihenfolge wie bei UART_NAME_t
+// Definition all UARTs
 //--------------------------------------------------------------
 UART_t UART[] = {
 // Name, Clock               , AF-UART      ,UART  , Baud , Interrupt
@@ -53,7 +22,7 @@ UART_t UART[] = {
 
 
 //--------------------------------------------------------------
-// init aller UARTs
+// init all UARTs
 //--------------------------------------------------------------
 void UB_Uart_Init(void)
 {
@@ -95,7 +64,7 @@ void UB_Uart_Init(void)
     // Oversampling
     USART_OverSampling8Cmd(UART[nr].UART, ENABLE);
 
-    // init mit Baudrate, 8Databits, 1Stopbit, keine Parität, kein RTS+CTS
+    // init mit Baudrate, 8Databits, 1Stopbit, keine Paritï¿½t, kein RTS+CTS
     USART_InitStructure.USART_BaudRate = UART[nr].BAUD;
     USART_InitStructure.USART_WordLength = USART_WordLength_8b;
     USART_InitStructure.USART_StopBits = USART_StopBits_1;
@@ -125,7 +94,7 @@ void UB_Uart_Init(void)
 }
 
 //--------------------------------------------------------------
-// ein Byte per UART senden
+// Send one byte
 //--------------------------------------------------------------
 void UB_Uart_SendByte(UART_NAME_t uart, uint16_t wert)
 {
@@ -135,7 +104,7 @@ void UB_Uart_SendByte(UART_NAME_t uart, uint16_t wert)
 }
 
 //--------------------------------------------------------------
-// einen String per UART senden
+// Send one string
 //--------------------------------------------------------------
 void UB_Uart_SendString(UART_NAME_t uart, char *ptr, UART_LASTBYTE_t end_cmd)
 {
@@ -188,14 +157,14 @@ UART_RXSTATUS_t UB_Uart_ReceiveString(UART_NAME_t uart, char *ptr)
     }while(wert!=RX_END_CHR);
     // Stringendekennung
     ptr[n]=0x00;
-    // RX-Puffer löschen
+    // RX-Puffer lï¿½schen
     UART_RX[uart].rx_buffer[0]=RX_END_CHR;
     UART_RX[uart].wr_ptr=0;
     UART_RX[uart].status=RX_EMPTY;
   }
   else if(UART_RX[uart].status==RX_FULL) {
     ret_wert=RX_FULL;
-    // RX-Puffer löschen
+    // RX-Puffer lï¿½schen
     UART_RX[uart].rx_buffer[0]=RX_END_CHR;
     UART_RX[uart].wr_ptr=0;
     UART_RX[uart].status=RX_EMPTY;
@@ -237,7 +206,7 @@ void P_UART_Receive(UART_NAME_t uart, uint16_t wert)
 //--------------------------------------------------------------
 // interne Funktion
 // UART-Interrupt-Funktion
-// Interrupt-Nr muss übergeben werden
+// Interrupt-Nr muss ï¿½bergeben werden
 //--------------------------------------------------------------
 void P_UART_RX_INT(uint8_t int_nr, uint16_t wert)
 {

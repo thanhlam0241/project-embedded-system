@@ -1,30 +1,13 @@
 //--------------------------------------------------------------
-// File     : maze_generate.c
-// Datum    : 22.11.2013
-// Version  : 1.0
-// Autor    : UB
-// EMail    : mc-4u(@)t-online.de
-// Web      : www.mikrocontroller-4u.de
-// CPU      : STM32F429
-// IDE      : CooCox CoIDE 1.7.4
-// GCC      : 4.7 2012q4
-// Module   : keine
-// Funktion : Helper Functions for generate a maze
-//--------------------------------------------------------------
-
-
-//--------------------------------------------------------------
 // Includes
 //--------------------------------------------------------------
 #include "maze_generate.h"
 
 //--------------------------------------------------------------
-// interne Funktionen
+// internal function
 //--------------------------------------------------------------
 void maze_generate_setonewallskin_outside(uint32_t x, uint32_t y, uint32_t r);
 void maze_generate_setonewallskin_inside(uint32_t x, uint32_t y);
-
-
 
 //--------------------------------------------------------------
 // search all rooms with a general mark
