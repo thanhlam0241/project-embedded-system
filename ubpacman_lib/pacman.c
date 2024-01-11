@@ -1,19 +1,4 @@
 //--------------------------------------------------------------
-// File     : pacman.c
-// Datum    : 22.11.2013
-// Version  : 1.0
-// Autor    : UB
-// EMail    : mc-4u(@)t-online.de
-// Web      : www.mikrocontroller-4u.de
-// CPU      : STM32F429
-// IDE      : CooCox CoIDE 1.7.4
-// GCC      : 4.7 2012q4
-// Module   : keine
-// Funktion : Pacman Gameplay
-//--------------------------------------------------------------
-
-
-//--------------------------------------------------------------
 // Includes
 //--------------------------------------------------------------
 #include "pacman.h"
@@ -39,9 +24,6 @@ Level_t Level[] = {
 
 USB_HID_HOST_STATUS_t usb_status;  // trang thai Keyboard
 
-//--------------------------------------------------------------
-// interne Funktionen
-//--------------------------------------------------------------
 uint32_t pacman_hw_init(void);
 uint32_t pacman_play(void);
 void pacman_dec_mode_timer(void);
@@ -57,6 +39,9 @@ void pacman_start(void)
   uint32_t check;
   char buf[10];
 
+  Game.debug_mode = 0;
+  Game.numberOfBots = 1;
+
   pacman_init(GAME_OVER);
   check=pacman_hw_init();
   gui_debug_uart("PACMAN 4 STM32F429 [UB]");
@@ -66,19 +51,23 @@ void pacman_start(void)
     UB_Font_DrawString(10,280,"Touch ERR",&Arial_7x10,FONT_COL,BACKGROUND_COL);
     while(1);
   }
-  skin_init();
+//  skin_init();
   player_init(GAME_OVER);
   blinky_init(GAME_OVER);
-  pinky_init(GAME_OVER);  
+  pinky_init(GAME_OVER);
   inky_init(GAME_OVER);
   clyde_init(GAME_OVER);
 
+
   // show menu
   menu_start();
+
+  if (Game.debug_mode == 0){
+	  skin_init();
+  }
+
   pacman_set_level();
   maze_build();
-
-  // gui_draw_debugmaze();  // only for debug to view the maze
 
   check=maze_generate_check();
   if(check==0) {
@@ -94,11 +83,13 @@ void pacman_start(void)
       gui_draw_gui(GUI_JOY_NONE);
       UB_Font_DrawString(10,305,"GET READY",&Arial_7x10,FONT_COL2,BACKGROUND_COL);
       UB_Systick_Pause_ms(1000);
-      UB_Font_DrawString(10,305,"   SET   ",&Arial_7x10,FONT_COL2,BACKGROUND_COL);
+      UB_Font_DrawString(10,305,"    1    ",&Arial_7x10,FONT_COL2,BACKGROUND_COL);
+      UB_Systick_Pause_ms(1000);
+      UB_Font_DrawString(10,305,"    2    ",&Arial_7x10,FONT_COL2,BACKGROUND_COL);
+      UB_Systick_Pause_ms(1000);
+      UB_Font_DrawString(10,305,"    3    ",&Arial_7x10,FONT_COL2,BACKGROUND_COL);
       UB_Systick_Pause_ms(1000);
       UB_Font_DrawString(10,305,"    GO   ",&Arial_7x10,FONT_COL2,BACKGROUND_COL);
-      UB_Systick_Pause_ms(1000);
-      UB_Font_DrawString(10,305,"         ",&Arial_7x10,FONT_COL2,BACKGROUND_COL);
       check=pacman_play();
       UB_Systick_Pause_ms(5000);
       if(check==GAME_PLAYER_WIN) {
@@ -122,7 +113,7 @@ void pacman_start(void)
       blinky_init(check);
       pinky_init(check);
       inky_init(check);
-      clyde_init(check); 
+      clyde_init(check);
       if(check==GAME_OVER) {
         // show menu
         menu_start();
@@ -181,7 +172,7 @@ void pacman_init(uint32_t mode)
 
   if(mode==GAME_OVER) {
     Game.collision=BOOL_TRUE;
-    Game.controller=GAME_CONTROL_TOUCH;
+    Game.controller=GAME_CONTROL_4BUTTON;
   }
   Game.mode=GAME_MODE_SCATTER;
   Game.mode_timer=GAME_SCATTER_TIME;
@@ -441,119 +432,3 @@ void pacman_dec_mode_timer(void)
     }
   }
 }
-
-
-////--------------------------------------------------------------
-//// interne Funktion
-//// init und start vom Timer
-////--------------------------------------------------------------
-//void P_Tiled_TimerStart(void)
-//{
-//  // init vom Timer
-//  P_Tiled_InitTimer();
-//
-//  // init vom NVIC
-//  P_Tiled_InitNVIC();
-//
-//  // start vom Timer
-//  TIM_Cmd(TILED_TIMER_NAME, ENABLE);
-//}
-//
-////--------------------------------------------------------------
-//// Timer-Interrupt
-//// wird alle 1ms aufgerufen
-////--------------------------------------------------------------
-//void TILED_TIMER_IRQHANDLER(void)
-//{
-//  if (TIM_GetITStatus(TILED_TIMER_NAME, TIM_IT_Update) != RESET) {
-//    // wenn Interrupt aufgetreten
-//    TIM_ClearITPendingBit(TILED_TIMER_NAME, TIM_IT_Update);
-//
-//    // USER CallBack-Funktion
-//    UB_Tiled_1ms_ISR_CallBack();
-//  }
-//}
-//
-//
-////--------------------------------------------------------------
-//// interne Funktion
-//// init vom NVIC
-////--------------------------------------------------------------
-//void P_Tiled_InitNVIC(void)
-//{
-//  NVIC_InitTypeDef NVIC_InitStructure;
-//
-//  // Update Interrupt enable
-//  TIM_ITConfig(TILED_TIMER_NAME,TIM_IT_Update,ENABLE);
-//
-//  // NVIC konfig
-//  NVIC_InitStructure.NVIC_IRQChannel = TILED_TIMER_IRQ;
-//  NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
-//  NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
-//  NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
-//  NVIC_Init(&NVIC_InitStructure);
-//}
-//
-////--------------------------------------------------------------
-//// interne Funktion
-//// init vom Timer
-////--------------------------------------------------------------
-//void P_Tiled_InitTimer(void)
-//{
-//  TIM_TimeBaseInitTypeDef  TIM_TimeBaseStructure;
-//
-//  // Clock enable
-//  RCC_APB1PeriphClockCmd(TILED_TIMER_CLK, ENABLE);
-//
-//  // Timer disable
-//  TIM_Cmd(TILED_TIMER_NAME, DISABLE);
-//
-//  // Timer init
-//  TIM_TimeBaseStructure.TIM_Period =  TILED_TIMER_PERIOD;
-//  TIM_TimeBaseStructure.TIM_Prescaler = TILED_TIMER_PRESCALE;
-//  TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV1;
-//  TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
-//  TIM_TimeBaseInit(TILED_TIMER_NAME, &TIM_TimeBaseStructure);
-//
-//  // Timer preload enable
-//  TIM_ARRPreloadConfig(TILED_TIMER_NAME, ENABLE);
-//}
-//
-////--------------------------------------------------------------
-//// User-Routine von Tiled
-//// (1ms Interrupt)
-////--------------------------------------------------------------
-//void UB_Tiled_1ms_ISR_CallBack(void)
-//{
-//  // USB-Keyboard bearbeiten
-//  usb_status=UB_USB_HID_HOST_Do();
-//}
-//
-////--------------------------------------------------------------
-//// Nhan dang phim duoc nhan
-////--------------------------------------------------------------
-//void UB_Tiled_Input_Device_CallBack(void)
-//{
-//  if(usb_status==USB_HID_KEYBOARD_CONNECTED) {
-//    // Kiem tra phim da duoc nhan chua
-//    if(UB_USB_HID_HOST_GetKeyAnz()>0) {
-//      // Nhan dang phim tu keyboard
-//      if(USB_KEY_DATA.akt_key1==79) {
-//      }// 79=cursor left
-//      }
-//      if(USB_KEY_DATA.akt_key1==89) {
-//      } // 89=cursor right
-//      if(USB_KEY_DATA.akt_key1==83) {
-//      }    // 83=cursor up
-//      if(USB_KEY_DATA.akt_key1==84) {
-//      }  // 84=cursor down
-//    }
-//    else {
-//    }; // Khong co phim nao duoc nhan
-//
-//}
-
-
-
-
-

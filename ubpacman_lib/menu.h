@@ -18,6 +18,7 @@
 #include "misc.h"
 #include "stm32_ub_systick.h"
 
+#include "pacman.h"
 
 
 //--------------------------------------------------------------
@@ -28,7 +29,7 @@
 #define  MENUE_COL_OFF   RGB_COL_BLUE
 #define  MENUE_COL_VALUE RGB_COL_WHITE
 
-#define  MENUE_MAX_POS   6
+#define  MENUE_MAX_POS   2
 
 #define  MENUE_STARTX1   20
 #define  MENUE_STARTX2   150

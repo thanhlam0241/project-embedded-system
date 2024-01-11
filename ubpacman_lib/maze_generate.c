@@ -3,9 +3,6 @@
 //--------------------------------------------------------------
 #include "maze_generate.h"
 
-//--------------------------------------------------------------
-// internal function
-//--------------------------------------------------------------
 void maze_generate_setonewallskin_outside(uint32_t x, uint32_t y, uint32_t r);
 void maze_generate_setonewallskin_inside(uint32_t x, uint32_t y);
 
@@ -37,7 +34,8 @@ void maze_generate_searchandset(uint32_t mark, Room_t room)
         if((Maze.Room[x][y].typ==ROOM_TYP_PATH) || (Maze.Room[x][y].special==ROOM_SPEC_PORTAL)) {
           Maze.Room[x][y].skin=ROOM_SKIN_POINTS_NONE;
           if(Maze.Room[x][y].points==ROOM_POINTS_NORMAL)  Maze.Room[x][y].skin=ROOM_SKIN_POINTS_NORMAL;
-          if(Maze.Room[x][y].points==ROOM_POINTS_ENERGY)  Maze.Room[x][y].skin=ROOM_SKIN_POINTS_ENERGY;
+          if(Maze.Room[x][y].points==ROOM_POINTS_ENERGY)  Maze.Room[x][y].skin=ROOM_SKIN_POINTS_NORMAL;
+//          if(Maze.Room[x][y].points==ROOM_POINTS_ENERGY)  Maze.Room[x][y].skin=ROOM_SKIN_POINTS_ENERGY;
         }
       }
       else if(mark==SEARCH_SKIN_UNDEF) {
@@ -82,7 +80,7 @@ uint32_t maze_generate_digpath_h(uint32_t x,uint32_t y,uint32_t l,uint32_t p)
 }
 
 //--------------------------------------------------------------
-// dig a path vertikal and set automaticly the doors and points
+// dao 1 duong thang dung va tu dong dat ten cac cua va diem+
 // len>=2
 // 0=ok
 //--------------------------------------------------------------

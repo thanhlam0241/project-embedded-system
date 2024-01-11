@@ -239,15 +239,6 @@ void skin_init_ghosts(void)
   Blinky_Skin[GHOST_SKIN_DOWN2].xp=2+(7*BOTS_WIDTH);
   Blinky_Skin[GHOST_SKIN_DOWN2].yp=68;
 
-  Blinky_Skin[GHOST_SKIN_FRIGHTEN1].xp=115;
-  Blinky_Skin[GHOST_SKIN_FRIGHTEN1].yp=69;
-
-  Blinky_Skin[GHOST_SKIN_FRIGHTEN2].xp=115;
-  Blinky_Skin[GHOST_SKIN_FRIGHTEN2].yp=83;
-
-  Blinky_Skin[GHOST_SKIN_DEAD].xp=115;
-  Blinky_Skin[GHOST_SKIN_DEAD].yp=98;
-
   //------------------------------------------
   Pinky_Skin[GHOST_SKIN_RIGHT1].xp=2;
   Pinky_Skin[GHOST_SKIN_RIGHT1].yp=82;
@@ -272,15 +263,6 @@ void skin_init_ghosts(void)
 
   Pinky_Skin[GHOST_SKIN_DOWN2].xp=2+(7*BOTS_WIDTH);
   Pinky_Skin[GHOST_SKIN_DOWN2].yp=82;
-
-  Pinky_Skin[GHOST_SKIN_FRIGHTEN1].xp=115;
-  Pinky_Skin[GHOST_SKIN_FRIGHTEN1].yp=69;
-
-  Pinky_Skin[GHOST_SKIN_FRIGHTEN2].xp=115;
-  Pinky_Skin[GHOST_SKIN_FRIGHTEN2].yp=83;
-
-  Pinky_Skin[GHOST_SKIN_DEAD].xp=115;
-  Pinky_Skin[GHOST_SKIN_DEAD].yp=98;
 
   //------------------------------------------
   Inky_Skin[GHOST_SKIN_RIGHT1].xp=2;
@@ -307,15 +289,6 @@ void skin_init_ghosts(void)
   Inky_Skin[GHOST_SKIN_DOWN2].xp=2+(7*BOTS_WIDTH);
   Inky_Skin[GHOST_SKIN_DOWN2].yp=96;
 
-  Inky_Skin[GHOST_SKIN_FRIGHTEN1].xp=115;
-  Inky_Skin[GHOST_SKIN_FRIGHTEN1].yp=69;
-
-  Inky_Skin[GHOST_SKIN_FRIGHTEN2].xp=115;
-  Inky_Skin[GHOST_SKIN_FRIGHTEN2].yp=83;
-
-  Inky_Skin[GHOST_SKIN_DEAD].xp=115;
-  Inky_Skin[GHOST_SKIN_DEAD].yp=98;
-
   //------------------------------------------
   Clyde_Skin[GHOST_SKIN_RIGHT1].xp=2;
   Clyde_Skin[GHOST_SKIN_RIGHT1].yp=110;
@@ -341,14 +314,6 @@ void skin_init_ghosts(void)
   Clyde_Skin[GHOST_SKIN_DOWN2].xp=2+(7*BOTS_WIDTH);
   Clyde_Skin[GHOST_SKIN_DOWN2].yp=110;
 
-  Clyde_Skin[GHOST_SKIN_FRIGHTEN1].xp=115;
-  Clyde_Skin[GHOST_SKIN_FRIGHTEN1].yp=69;
-
-  Clyde_Skin[GHOST_SKIN_FRIGHTEN2].xp=115;
-  Clyde_Skin[GHOST_SKIN_FRIGHTEN2].yp=83;
-
-  Clyde_Skin[GHOST_SKIN_DEAD].xp=115;
-  Clyde_Skin[GHOST_SKIN_DEAD].yp=98;
 }
 
 //--------------------------------------------------------------

@@ -336,7 +336,7 @@ void player_check_event(void)
   // check of points
   if(Maze.Room[xp][yp].points!=ROOM_POINTS_NONE) {
     // we got points
-    if(Maze.Room[xp][yp].points==ROOM_POINTS_NORMAL) {
+    if(Maze.Room[xp][yp].points==ROOM_POINTS_NORMAL || Maze.Room[xp][yp].points==ROOM_POINTS_ENERGY ) {
       // normal
       Player.score+=GAME_POINTS_NORMAL;
       Player.point_dots++;

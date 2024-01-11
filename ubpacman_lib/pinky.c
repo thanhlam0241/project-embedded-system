@@ -1,21 +1,3 @@
-//--------------------------------------------------------------
-// File     : pinky.c
-// Datum    : 22.11.2013
-// Version  : 1.0
-// Autor    : UB
-// EMail    : mc-4u(@)t-online.de
-// Web      : www.mikrocontroller-4u.de
-// CPU      : STM32F429
-// IDE      : CooCox CoIDE 1.7.4
-// GCC      : 4.7 2012q4
-// Module   : keine
-// Funktion : Ghost : Pinky
-//--------------------------------------------------------------
-
-
-//--------------------------------------------------------------
-// Includes
-//--------------------------------------------------------------
 #include "pinky.h"
 
 
@@ -37,7 +19,7 @@ void pinky_calc_next_move(void);
 void pinky_init(uint32_t mode)
 {
   if(mode==GAME_OVER) {
-    Pinky.strategy=GHOST_STRATEGY_PINKY;
+    Pinky.strategy=GHOST_STRATEGY_RANDOM;
   }
   if(Player.level<=GAME_MAX_LEVEL) {
     Pinky.akt_speed_ms=Level[Player.level-1].pinky_speed;

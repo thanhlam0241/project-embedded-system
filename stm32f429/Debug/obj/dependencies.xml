@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dependencies>
    <includePath signature="/I..\..\..\..\..\Users\HP PAVILION\Desktop\Nhungs /I..\..\..\..\..\Users\HP PAVILION\Desktop /I..\..\..\..\..\Users\HP PAVILION\Desktop\Nhungs\Show_07_PacMan /I..\..\..\..\..\Users\HP PAVILION\Desktop\Nhungs\Show_07_PacMan\cmsis_lib /I..\..\..\..\..\Users\HP PAVILION\Desktop\Nhungs\Show_07_PacMan\ubpacman_lib /I..\..\..\..\..\Users\HP PAVILION\Desktop\Nhungs\Show_07_PacMan\ub_lib /I..\..\..\..\..\Users\HP PAVILION\Desktop\Nhungs\Show_07_PacMan\cmsis_boot /I..\..\..\..\..\Users\HP PAVILION\Desktop\Nhungs\Show_07_PacMan\cmsis_lib\include /I..\..\..\..\..\Users\HP PAVILION\Desktop\Nhungs\Show_07_PacMan\ub_lib\usb_hid_host_lolevel /I..\..\..\..\..\Users\HP PAVILION\Desktop\Nhungs\Show_07_PacMan\cmsis">
-      <source file="..\..\..\ubpacman_lib\pacman.h" lastModified="18cd4dd91d4">
+      <source file="..\..\..\ubpacman_lib\pacman.h" lastModified="18cf3b49ed3">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_tim.h"/>
          <include file="..\..\..\cmsis_lib\include\misc.h"/>
@@ -41,7 +41,7 @@
       <source file="..\..\..\ub_lib\usb_hid_host_lolevel\usbh_hcs.h" lastModified="18ca96d466c">
          <include file="..\..\..\ub_lib\usb_hid_host_lolevel\usbh_core.h"/>
       </source>
-      <source file="..\..\..\ubpacman_lib\pacman.c" lastModified="18cda8dea6d">
+      <source file="..\..\..\ubpacman_lib\pacman.c" lastModified="18cf3d028c9">
          <include file="..\..\..\ubpacman_lib\pacman.h"/>
       </source>
       <source file="..\..\..\ub_lib\usb_hid_host_lolevel\usbh_hid_mouse.h" lastModified="18ca96d47e4">
@@ -51,13 +51,13 @@
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_ltdc.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
       </source>
-      <source file="..\..\..\ubpacman_lib\pinky.c" lastModified="18cd22451f7">
+      <source file="..\..\..\ubpacman_lib\pinky.c" lastModified="18cf3d65f0a">
          <include file="..\..\..\ubpacman_lib\pinky.h"/>
       </source>
       <source file="..\..\..\ub_lib\font\ub_font_arial_7x10.c" lastModified="18cd22472a3">
          <include file="..\..\..\ub_lib\stm32_ub_font.h"/>
       </source>
-      <source file="..\..\..\ub_lib\stm32_ub_uart.c" lastModified="18cd224716d">
+      <source file="..\..\..\ub_lib\stm32_ub_uart.c" lastModified="18cdcf2203a">
          <include file="..\..\..\ub_lib\stm32_ub_uart.h"/>
       </source>
       <source file="..\..\..\ub_lib\usb_hid_host_lolevel\usbh_usr.c" lastModified="18cd48a68fe">
@@ -97,7 +97,7 @@
       <source file="..\..\..\cmsis_lib\include\misc.h" lastModified="18cd2243a4f">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
       </source>
-      <source file="..\..\..\ubpacman_lib\bot.c" lastModified="18cd2245600">
+      <source file="..\..\..\ubpacman_lib\bot.c" lastModified="18cdcdb42e5">
          <include file="..\..\..\ubpacman_lib\bot.h"/>
          <include file="..\..\..\ubpacman_lib\gui.h"/>
       </source>
@@ -115,7 +115,7 @@
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_fmc.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
       </source>
-      <source file="..\..\..\ubpacman_lib\blinky.c" lastModified="18cd315cb10">
+      <source file="..\..\..\ubpacman_lib\blinky.c" lastModified="18cf3d6de61">
          <include file="..\..\..\ubpacman_lib\blinky.h"/>
       </source>
       <source file="..\..\..\cmsis_lib\source\stm32f4xx_dma2d.c" lastModified="18cd2243d25">
@@ -133,12 +133,12 @@
          <include file="..\..\..\ubpacman_lib\skin.h"/>
          <include file="..\..\..\ubpacman_lib\gui.h"/>
       </source>
-      <source file="..\..\..\ub_lib\stm32_ub_systick.h" lastModified="18cda0baee5">
+      <source file="..\..\..\ub_lib\stm32_ub_systick.h" lastModified="18cdcef2b9f">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
          <include file="..\..\..\ub_lib\stm32_ub_usb_hid_host.h"/>
       </source>
-      <source file="..\..\..\ubpacman_lib\clyde.c" lastModified="18cd2244e9f">
+      <source file="..\..\..\ubpacman_lib\clyde.c" lastModified="18cf3d6ac29">
          <include file="..\..\..\ubpacman_lib\clyde.h"/>
       </source>
       <source file="..\..\..\ub_lib\stm32_ub_lcd_ili9341.h" lastModified="18cd2246f1f">
@@ -150,7 +150,7 @@
          <include file="..\..\..\ub_lib\stm32_ub_spi5.h"/>
          <include file="..\..\..\ub_lib\stm32_ub_sdram.h"/>
       </source>
-      <source file="..\..\..\ub_lib\stm32_ub_systick.c" lastModified="18cda2afd8a">
+      <source file="..\..\..\ub_lib\stm32_ub_systick.c" lastModified="18cdcf1c71c">
          <include file="..\..\..\ub_lib\stm32_ub_systick.h"/>
       </source>
       <source file="..\..\..\cmsis_boot\stm32f4xx.h" lastModified="18cd2243c26">
@@ -193,26 +193,26 @@
          <include file="..\..\..\ub_lib\stm32_ub_lcd_ili9341.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_dma2d.h"/>
       </source>
-      <source file="..\..\..\ubpacman_lib\inky.c" lastModified="18cd2244f9d">
+      <source file="..\..\..\ubpacman_lib\inky.c" lastModified="18cf3d6be70">
          <include file="..\..\..\ubpacman_lib\inky.h"/>
       </source>
       <source file="..\..\..\ub_lib\stm32_ub_sdram.c" lastModified="18cd2246f5d">
          <include file="..\..\..\ub_lib\stm32_ub_sdram.h"/>
       </source>
-      <source file="..\..\..\ub_lib\stm32_ub_graphic2d.c" lastModified="18cd224545f">
+      <source file="..\..\..\ub_lib\stm32_ub_graphic2d.c" lastModified="18cdce32c6c">
          <include file="..\..\..\ub_lib\stm32_ub_graphic2d.h"/>
       </source>
       <source file="..\..\..\cmsis_lib\include\stm32f4xx_spi.h" lastModified="18cd2243c48">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
       </source>
-      <source file="..\..\..\ub_lib\stm32_ub_button.h" lastModified="18cd48da999">
+      <source file="..\..\..\ub_lib\stm32_ub_button.h" lastModified="18cdcf12c86">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_tim.h"/>
          <include file="..\..\..\cmsis_lib\include\misc.h"/>
       </source>
-      <source file="..\..\..\ub_lib\stm32_ub_button.c" lastModified="18cd48c5711">
+      <source file="..\..\..\ub_lib\stm32_ub_button.c" lastModified="18cdce2f523">
          <include file="..\..\..\ub_lib\stm32_ub_button.h"/>
       </source>
       <source file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h" lastModified="18cd2243c00">
@@ -220,7 +220,7 @@
       </source>
       <source file="..\..\..\cmsis_boot\system_stm32f4xx.h" lastModified="18cd224395f">
       </source>
-      <source file="..\..\..\ubpacman_lib\maze.h" lastModified="18cd2245056">
+      <source file="..\..\..\ubpacman_lib\maze.h" lastModified="18cdf53fce1">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
          <include file="..\..\..\ubpacman_lib\bot.h"/>
       </source>
@@ -229,7 +229,7 @@
       <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="18cd22438fa">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
       </source>
-      <source file="..\..\..\ubpacman_lib\maze.c" lastModified="18cd2245021">
+      <source file="..\..\..\ubpacman_lib\maze.c" lastModified="18cdf53dd9d">
          <include file="..\..\..\ubpacman_lib\maze.h"/>
          <include file="..\..\..\ubpacman_lib\maze_generate.h"/>
       </source>
@@ -241,11 +241,6 @@
          <include file="..\..\..\ub_lib\stm32_ub_uart.h"/>
       </source>
       <source file="..\..\..\ub_lib\usb_hid_host_lolevel\usbh_conf.h" lastModified="18ca96d452c">
-      </source>
-      <source file="..\..\..\ub_lib\stm32_ub_tiled.c" lastModified="18cd4e4d3f4">
-      </source>
-      <source file="..\..\..\ubpacman_lib\player.c" lastModified="18cd349c90c">
-         <include file="..\..\..\ubpacman_lib\player.h"/>
       </source>
       <source file="..\..\..\cmsis_lib\include\stm32f4xx_dma2d.h" lastModified="18cd2243aa4">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
@@ -260,7 +255,7 @@
       </source>
       <source file="..\..\..\cmsis\core_cmFunc.h" lastModified="18cd2243f59">
       </source>
-      <source file="..\..\..\ub_lib\stm32_ub_usb_hid_host.c" lastModified="18ca96d3f40">
+      <source file="..\..\..\ub_lib\stm32_ub_usb_hid_host.c" lastModified="18cdcf250d4">
          <include file="..\..\..\ub_lib\stm32_ub_usb_hid_host.h"/>
       </source>
       <source file="..\..\..\cmsis_lib\include\stm32f4xx_usart.h" lastModified="18cd2243c8b">
@@ -310,7 +305,7 @@
          <include file="..\..\..\ub_lib\usb_hid_host_lolevel\usbh_core.h"/>
          <include file="..\..\..\ub_lib\usb_hid_host_lolevel\usb_hcd_int.h"/>
       </source>
-      <source file="..\..\..\ub_lib\stm32_ub_i2c3.c" lastModified="18cd2246e6a">
+      <source file="..\..\..\ub_lib\stm32_ub_i2c3.c" lastModified="18cdce3776a">
          <include file="..\..\..\ub_lib\stm32_ub_i2c3.h"/>
       </source>
       <source file="..\..\..\ub_lib\usb_hid_host_lolevel\usbh_hid_keybd.h" lastModified="18ca96d4768">
@@ -341,6 +336,9 @@
       </source>
       <source file="..\..\..\ub_lib\usb_hid_host_lolevel\usbh_hid_keybd.c" lastModified="18ca96d472c">
          <include file="..\..\..\ub_lib\usb_hid_host_lolevel\usbh_hid_keybd.h"/>
+      </source>
+      <source file="..\..\..\ubpacman_lib\gui.c" lastModified="18cf3d088ef">
+         <include file="..\..\..\ubpacman_lib\gui.h"/>
       </source>
       <source file="..\..\..\ub_lib\usb_hid_host_lolevel\usb_hcd_int.h" lastModified="18ca96d4b18">
          <include file="..\..\..\ub_lib\usb_hid_host_lolevel\usb_hcd.h"/>
@@ -378,22 +376,22 @@
          <include file="..\..\..\ub_lib\usb_hid_host_lolevel\usb_conf.h"/>
          <include file="..\..\..\ub_lib\usb_hid_host_lolevel\usb_bsp.h"/>
       </source>
-      <source file="..\..\..\ub_lib\usb_hid_host_lolevel\usb_defines.h" lastModified="18ca96d4a3e">
-         <include file="..\..\..\ub_lib\usb_hid_host_lolevel\usb_conf.h"/>
-      </source>
       <source file="..\..\..\cmsis_lib\include\stm32f4xx_i2c.h" lastModified="18cd2243b76">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\ub_lib\usb_hid_host_lolevel\usb_defines.h" lastModified="18ca96d4a3e">
+         <include file="..\..\..\ub_lib\usb_hid_host_lolevel\usb_conf.h"/>
       </source>
       <source file="..\..\..\ub_lib\usb_hid_host_lolevel\usb_core.c" lastModified="18ca96d49dd">
          <include file="..\..\..\ub_lib\usb_hid_host_lolevel\usb_core.h"/>
          <include file="..\..\..\ub_lib\usb_hid_host_lolevel\usb_bsp.h"/>
       </source>
-      <source file="..\..\..\ubpacman_lib\maze_generate.h" lastModified="18cd22450d2">
+      <source file="..\..\..\ubpacman_lib\maze_generate.h" lastModified="18cdf56743b">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
          <include file="..\..\..\ubpacman_lib\maze.h"/>
          <include file="..\..\..\ubpacman_lib\skin.h"/>
       </source>
-      <source file="..\..\..\ubpacman_lib\menu.h" lastModified="18cda0e2d0f">
+      <source file="..\..\..\ubpacman_lib\menu.h" lastModified="18cf3cfc87c">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
          <include file="..\..\..\ubpacman_lib\gui.h"/>
          <include file="..\..\..\ub_lib\stm32_ub_usb_hid_host.h"/>
@@ -401,11 +399,15 @@
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_tim.h"/>
          <include file="..\..\..\cmsis_lib\include\misc.h"/>
          <include file="..\..\..\ub_lib\stm32_ub_systick.h"/>
+         <include file="..\..\..\ubpacman_lib\pacman.h"/>
       </source>
       <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="18cd22439d8">
       </source>
       <source file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h" lastModified="18cd2243b34">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\ubpacman_lib\maze_generate.c" lastModified="18cf3e9a477">
+         <include file="..\..\..\ubpacman_lib\maze_generate.h"/>
       </source>
       <source file="..\..\..\ub_lib\usb_hid_host_lolevel\usbh_stdreq.h" lastModified="18ca96d48af">
          <include file="..\..\..\ub_lib\usb_hid_host_lolevel\usb_conf.h"/>
@@ -413,10 +415,7 @@
          <include file="..\..\..\ub_lib\usb_hid_host_lolevel\usbh_core.h"/>
          <include file="..\..\..\ub_lib\usb_hid_host_lolevel\usbh_def.h"/>
       </source>
-      <source file="..\..\..\ubpacman_lib\maze_generate.c" lastModified="18cd224509e">
-         <include file="..\..\..\ubpacman_lib\maze_generate.h"/>
-      </source>
-      <source file="..\..\..\ubpacman_lib\menu.c" lastModified="18cda83dbca">
+      <source file="..\..\..\ubpacman_lib\menu.c" lastModified="18cf3d136d0">
          <include file="..\..\..\ubpacman_lib\menu.h"/>
       </source>
       <source file="..\..\..\cmsis_lib\include\stm32f4xx_tim.h" lastModified="18ca96d2ab4">

@@ -112,6 +112,8 @@ typedef struct {
   uint32_t frightened;
   uint32_t frightened_timer;
   uint32_t frightened_points;
+  uint32_t debug_mode;
+  uint32_t numberOfBots;
 }Game_t;
 Game_t Game;
 

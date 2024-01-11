@@ -684,7 +684,7 @@ uint32_t gui_check_keyboard(void){
 	  static uint32_t old_button=999;
 
 	  if(akt_usb_status==USB_HID_KEYBOARD_CONNECTED) {
-	      if(UB_USB_HID_HOST_GetKeyAnz()>0) {
+	    if(UB_USB_HID_HOST_GetKeyAnz()>0) {
 	      // Nhan dang phim tu keyboard
 	      if(USB_KEY_DATA.akt_key1==79) {
 	    	    ret_wert=GUI_JOY_LEFT;
@@ -695,7 +695,7 @@ uint32_t gui_check_keyboard(void){
 	      if(USB_KEY_DATA.akt_key1==83) {
 	    	  ret_wert=GUI_JOY_UP;
 	      }
-	      }    // 83=cursor up
+	    }    // 83=cursor up
 	      if(USB_KEY_DATA.akt_key1==84) {
 	    	    ret_wert=GUI_JOY_DOWN;
 	      }  // 84=cursor down

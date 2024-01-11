@@ -1,19 +1,4 @@
 //--------------------------------------------------------------
-// File     : inky.c
-// Datum    : 22.11.2013
-// Version  : 1.0
-// Autor    : UB
-// EMail    : mc-4u(@)t-online.de
-// Web      : www.mikrocontroller-4u.de
-// CPU      : STM32F429
-// IDE      : CooCox CoIDE 1.7.4
-// GCC      : 4.7 2012q4
-// Module   : keine
-// Funktion : Ghost : Inky
-//--------------------------------------------------------------
-
-
-//--------------------------------------------------------------
 // Includes
 //--------------------------------------------------------------
 #include "inky.h"
@@ -37,7 +22,7 @@ void inky_calc_next_move(void);
 void inky_init(uint32_t mode)
 {
   if(mode==GAME_OVER) {
-    Inky.strategy=GHOST_STRATEGY_INKY;
+    Inky.strategy=GHOST_STRATEGY_RANDOM;
   }
   if(Player.level<=GAME_MAX_LEVEL) {
     Inky.akt_speed_ms=Level[Player.level-1].inky_speed;

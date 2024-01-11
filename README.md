@@ -56,15 +56,12 @@ Pac-Man không chỉ ghi điểm thông qua việc ăn điểm mà còn trở th
 - Hồn ma (Bot):
   Các đổi tượng sẽ đuổi bắt người chơi.
 
-- Normal Item (Điểm vàng nhỏ): Các điểm vàng, khi ăn sẽ được cộng điểm.
-
-- Special Item (Điểm vàng to): Khi ăn sẽ làm chậm các Hồn ma. Lúc này người chơi có thể đến tấn công hồn ma và bắt chúng trở lại phòng đợi.
+- Item (Điểm vàng nhỏ): Các điểm vàng, khi ăn sẽ được cộng điểm.
 
 ### Cách chơi
 
 1. **Điều khiển:**
-   Cách 1: Sử dụng phím cảm ứng (Touch).
-   Cách 2: Kết nối Keyboard thông qua cổng USB.
+   Kết nối Keyboard thông qua cổng USB.
 2. **Mục tiêu:**
    Ăn hết toàn bộ vật phẩm trên bản đồ và số mạng không bị về 0.
 
@@ -74,10 +71,23 @@ Pac-Man không chỉ ghi điểm thông qua việc ăn điểm mà còn trở th
 
 ## Thuật Toán Tổng Quát của Trò Chơi:
 
-### 1.
+### 1. **Khởi động**
+
+Khi bật kit, màn hình hiển thị thanh menu. Người chơi dùng bàn phím để chọn level để chơi. Level có giá trị từ 1 đến 10, các giá trị sẽ ảnh hưởng đến tốc độ di chuyển của người chơi và các con bot. Sau khi chọn xong, di chuyển đến nút Start và nhấn Enter.
 
 ### 2. **Chuẩn Bị Bản Đồ**:
 
+Sau khi ấn nút Enter từ thanh menu, màn hình menu sẽ bị xóa và hiển thị màn hình chơi. Màn hình gồm có 1 mê cung, trong mê cung có các bức tường và các con bot. Người chơi sẽ dùng các phím mũi tên trên bàn phím để di chuyển nhân vật, mục tiêu là ăn hết các điểm vàng trên màn hình
+
 ### 3. **Vòng Lặp Trò Chơi**:
 
+Trong mỗi vòng lặp, các con bot sẽ di chuyển theo chiến lược random (chọn ngẫu nhiên 1 hướng nếu có đường đi). Khi di chuyển, tọa độ x, y của các Bot sẽ được thay đổi tùy theo hướng đi.
+Game sẽ nhận diện xem người chơi có bấm phím hay không. Nếu không thì nhân vật sẽ di chuyển theo hướng đi hiện tại đến khi đâm vào tường. Nếu có thay đổi về hướng đi và không bị cản trở bởi tường, nhân vật có thể đổi hướng và di chuyển theo hướng đó (thêm 1 vào tọa độ theo hướng).
+Tại mỗi vòng lặp, các Bot và người chơi sẽ kiểm tra hướng đi, từ đó thay đổi trạng thái animation. Đồng thời, người chơi sẽ kiểm tra xem tọa độ x và y có trùng với tọa độ x và y của các con Bot không. Nếu có thì sẽ bị trừ đi 1 sinh mạng và reset trạng thái.
+Sau đó game sẽ clear toàn màn hình và update lại các trạng thái của các nhân vật.
+
 ### 4. **Kết Thúc Trò Chơi**:
+
+Game sẽ kết thúc khi sinh mệnh người chơi về 0. Màn hình hiển thị Game Over và trở lại Menu
+
+# Video Demo (Demo sau)

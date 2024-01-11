@@ -1,28 +1,6 @@
-//--------------------------------------------------------------
-// File     : maze.c
-// Datum    : 22.11.2013
-// Version  : 1.0
-// Autor    : UB
-// EMail    : mc-4u(@)t-online.de
-// Web      : www.mikrocontroller-4u.de
-// CPU      : STM32F429
-// IDE      : CooCox CoIDE 1.7.4
-// GCC      : 4.7 2012q4
-// Module   : keine
-// Funktion : Maze for Pacman
-//--------------------------------------------------------------
-
-
-//--------------------------------------------------------------
-// Includes
-//--------------------------------------------------------------
 #include "maze.h"
 #include "maze_generate.h"
 
-
-//--------------------------------------------------------------
-// Interne Funktionen
-//--------------------------------------------------------------
 void maze_make_rooms(void);
 void maze_set_skin(void);
 void maze_count_dots(void);
@@ -156,14 +134,6 @@ void maze_make_rooms(void)
   room.special=ROOM_SPEC_GATE;
   room.door=ROOM_IGATE_L; // gate for inky (left)
   maze_generate_setgate(13,14,room,ROOM_DOOR_L);
-
-  //------------------------------
-  // 7. set manually energizer Points
-  //------------------------------  
-  Maze.Room[1][3].points=ROOM_POINTS_ENERGY;
-  Maze.Room[26][3].points=ROOM_POINTS_ENERGY;
-  Maze.Room[1][23].points=ROOM_POINTS_ENERGY;
-  Maze.Room[26][23].points=ROOM_POINTS_ENERGY;
 
   //------------------------------
   // 8. clear manually two Points at the startfield

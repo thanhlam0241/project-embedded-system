@@ -1,8 +1,3 @@
-//--------------------------------------------------------------
-// File     : maze_generate.h
-//--------------------------------------------------------------
-
-//--------------------------------------------------------------
 #ifndef __STM32F4_UB_MAZE_GEN_H
 #define __STM32F4_UB_MAZE_GEN_H
 
@@ -21,11 +16,6 @@
 #define  SEARCH_SKIN_UNDEF  3 // set skin of all "undef" rooms
 
 
-
-
-//--------------------------------------------------------------
-// Globale Funktionen
-//--------------------------------------------------------------
 void maze_generate_searchandset(uint32_t mark, Room_t room);
 uint32_t maze_generate_digpath_h(uint32_t x,uint32_t y,uint32_t l,uint32_t p);
 uint32_t maze_generate_digpath_v(uint32_t x,uint32_t y,uint32_t l,uint32_t p);
