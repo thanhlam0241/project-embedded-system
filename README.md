@@ -91,3 +91,11 @@ Sau đó game sẽ clear toàn màn hình và update lại các trạng thái c�
 Game sẽ kết thúc khi sinh mệnh người chơi về 0. Màn hình hiển thị Game Over và trở lại Menu
 
 # Video Demo (Demo sau)
+
+
+https://github.com/thanhlam0241/project-embedded-system/assets/80621994/1cf4c0eb-6c99-4b82-b2ad-5df63fa3b0ce
+
+
+
+
+
